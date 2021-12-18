@@ -1,10 +1,10 @@
-package co.edu.usa.ciclo4.retocuatro;
+package co.edu.usa.ciclo4.retocinco;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RetocuatroApplicationTests {
+class RetocincoApplicationTests {
 
 	@Test
 	void contextLoads() {

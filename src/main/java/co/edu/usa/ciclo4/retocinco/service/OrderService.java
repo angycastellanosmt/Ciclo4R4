@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.usa.ciclo4.retocuatro.service;
+package co.edu.usa.ciclo4.retocinco.service;
 
-import co.edu.usa.ciclo4.retocuatro.model.Order;
-import co.edu.usa.ciclo4.retocuatro.repository.OrderRepository;
+import co.edu.usa.ciclo4.retocinco.model.Order;
+import co.edu.usa.ciclo4.retocinco.repository.OrderRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,12 +72,11 @@ public class OrderService {
     }
 
     public boolean delete(int id) {
-        Boolean aBoolean = getOrder(id).map(order -> {
+         return getOrder(id).map(order -> {
             orderRepository.delete(order);
             return true;
         }).orElse(false);
-        return aBoolean;
-    }
+     }
 //    //Ordenes de pedido asociadas a los asesores de una zona
     public List<Order>getOrderByZone(String zone){
         return orderRepository.getOrderbyZone(zone);

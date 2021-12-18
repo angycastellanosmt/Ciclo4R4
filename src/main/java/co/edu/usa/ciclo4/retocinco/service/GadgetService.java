@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.usa.ciclo4.retocuatro.service;
+package co.edu.usa.ciclo4.retocinco.service;
 
-import co.edu.usa.ciclo4.retocuatro.model.Gadget;
-import co.edu.usa.ciclo4.retocuatro.repository.GadgetRepository;
+import co.edu.usa.ciclo4.retocinco.model.Gadget;
+import co.edu.usa.ciclo4.retocinco.repository.GadgetRepository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -82,5 +82,17 @@ public class GadgetService {
         }).orElse(false);
         return aBoolean;
     }
+    
+    public List<Gadget> findGadgetByDescrip(String description){
+       // return gadgetRepository.findGadgetByDescrip("(?i)"+description);
+        return gadgetRepository.findGadgetByDescrip(description);
+    }
+    
+    public List<Gadget>findByPriceLessThanEqual(double price) {
+        return gadgetRepository.findByPriceLessThanEqual(price);
+    }
+
+   
+
 }
 

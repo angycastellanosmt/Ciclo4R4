@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.usa.ciclo4.retocuatro.repository;
+package co.edu.usa.ciclo4.retocinco.repository;
 
-import co.edu.usa.ciclo4.retocuatro.model.User;
-import co.edu.usa.ciclo4.retocuatro.repository.crud.UserCrudRepository;
+import co.edu.usa.ciclo4.retocinco.model.User;
+import co.edu.usa.ciclo4.retocinco.repository.crud.UserCrudRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +53,9 @@ public class UserRepository {
     public Optional<User> lastUserId() {
         return userCrudRepository.findTopByOrderByIdDesc();
     }
+    
+     public List<User> birthtDayList(String monthBirthtDay) {
+        return userCrudRepository.findByMonthBirthtDay(monthBirthtDay);
+    }
 }
+

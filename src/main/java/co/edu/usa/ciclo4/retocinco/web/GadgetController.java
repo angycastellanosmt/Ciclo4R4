@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.usa.ciclo4.retocuatro.web;
+package co.edu.usa.ciclo4.retocinco.web;
 
-import co.edu.usa.ciclo4.retocuatro.model.Gadget;
-import co.edu.usa.ciclo4.retocuatro.service.GadgetService;
+import co.edu.usa.ciclo4.retocinco.model.Gadget;
+import co.edu.usa.ciclo4.retocinco.service.GadgetService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,4 +60,15 @@ public class GadgetController {
         return gadgetService.delete(id);
         
     }
+    
+     @GetMapping("/description/{description}")
+    public List<Gadget> getGadgetbyDescrip (@PathVariable("description")String descrip){
+        return gadgetService.findGadgetByDescrip(descrip);
+    }
+    
+     @GetMapping("/price/{price}")
+    public List<Gadget> findByPriceLessThanEqual(@PathVariable("price") double precio) {
+        return gadgetService.findByPriceLessThanEqual(precio);
+    }
+
 }

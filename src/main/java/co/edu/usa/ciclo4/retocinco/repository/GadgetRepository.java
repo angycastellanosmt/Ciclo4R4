@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.usa.ciclo4.retocuatro.repository;
+package co.edu.usa.ciclo4.retocinco.repository;
 
-import co.edu.usa.ciclo4.retocuatro.model.Gadget;
-import co.edu.usa.ciclo4.retocuatro.repository.crud.GadgetCrudRepository;
+import co.edu.usa.ciclo4.retocinco.model.Gadget;
+import co.edu.usa.ciclo4.retocinco.repository.crud.GadgetCrudRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,4 +40,14 @@ public class GadgetRepository {
     public void delete(Gadget gadget){
         gadgetCrudRepository.delete(gadget);
     }
+    
+    public List<Gadget> findGadgetByDescrip (String description){
+       return gadgetCrudRepository.findGadgetByDescription(description);
+    }
+    
+    public List<Gadget> findByPriceLessThanEqual(double precio) {
+        return gadgetCrudRepository.findByPriceLessThanEqual(precio);
+    }
+
 }
+

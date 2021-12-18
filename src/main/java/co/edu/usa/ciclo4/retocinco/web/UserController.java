@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.usa.ciclo4.retocuatro.web;
+package co.edu.usa.ciclo4.retocinco.web;
 
-import co.edu.usa.ciclo4.retocuatro.model.User;
-import co.edu.usa.ciclo4.retocuatro.service.UserService;
+import co.edu.usa.ciclo4.retocinco.model.User;
+import co.edu.usa.ciclo4.retocinco.service.UserService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,5 +93,9 @@ public class UserController {
     public User autenticarUser(@PathVariable("email")String email, @PathVariable("password")String password){
     return userService.autenticarUsuario(email, password);
     }  
-    
+ 
+    @GetMapping("/birthday/{month}")
+    public List<User> birthtDayList(@PathVariable("month") String monthBirthtDay) {
+        return userService.birthtDayList(monthBirthtDay);
+    }
 }
